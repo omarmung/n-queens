@@ -16,7 +16,34 @@
 
 
 window.findNRooksSolution = function(n) {
-  var solution = undefined; //fixme
+  
+  var Tree = function(matrix) {
+    this.matrix;
+    this.children = [];
+  };
+
+  Tree.prototype.addChild = function(matrix) {
+    var child = new Tree(matrix);
+    this.children.push(child);
+    return child;
+  };
+
+  
+ 
+  var solution = []; //fixme
+  if (n === 1) {
+    solution = [[1]];
+  } else {
+    var board = new Board({'n': n});
+    
+    for (var i = 0; i < n; i++) {
+      board.rows[i];
+    }
+
+    var currentRow = board.rows[0];
+
+
+  }
 
   console.log('Single solution for ' + n + ' rooks:', JSON.stringify(solution));
   return solution;
